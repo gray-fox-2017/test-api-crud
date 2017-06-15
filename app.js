@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express()
+var router = express.Router();
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/api-crud-mongoose');
