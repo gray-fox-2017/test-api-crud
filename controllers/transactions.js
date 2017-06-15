@@ -1,4 +1,7 @@
+var Transaction = require('../models/transaction')
+
 module.exports = {
+
   all: function(req, res) {
     Transaction.find(function (err, transactions) {
       if (err) {
@@ -42,4 +45,5 @@ module.exports = {
       res.send(result)
     });
   }
+
 }
