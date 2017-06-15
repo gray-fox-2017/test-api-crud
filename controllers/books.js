@@ -10,8 +10,9 @@ module.exports = {
     })
   },
   create: function(req, res) {
+    console.log(req.body);
     var book = new Book(req.body);
-    Book.save(function (err, result) {
+    book.save(function (err, result) {
       if (err) {
         res.send({err: err})
       }
@@ -29,7 +30,7 @@ module.exports = {
     });
   },
   delete: function(req, res) {
-    Book.remove({ _id: req.id }, function (err, result) {
+    Book.remove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.send({err: err})
       }
