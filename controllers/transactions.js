@@ -27,7 +27,7 @@ module.exports = {
     }, function(err, result) {
       if (err) {
         res.status(500)
-        res.send({err: err})
+        res.send(err)
       }
       res.status(200)
       res.send(result)
