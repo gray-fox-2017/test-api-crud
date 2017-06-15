@@ -1,4 +1,4 @@
-var Book = require('..models/book')
+var Book = require('../models/book')
 
 module.exports = {
   all: function(req, res) {
