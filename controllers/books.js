@@ -1,6 +1,8 @@
+const Book = require('../models/book')
+
 module.exports = {
   all: function(req, res) {
-    Book.find(function (err, books) {
+    Book.find({}, function (err, books) {
       if (err) {
         res.status(500)
         res.send({err: err})
@@ -21,7 +23,7 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    Book.update({ _id: req.id }, {
+    Book.findByIdAndUpdate({ _id: req.params.id }, {
       $set: req.body
     }, function(err, result) {
       if (err) {
@@ -33,7 +35,7 @@ module.exports = {
     });
   },
   delete: function(req, res) {
-    Book.remove({ _id: req.id }, function (err, result) {
+    Book.findOneAndRemove(req.params.id, function (err, result) {
       if (err) {
         res.status(500)
         res.send({err: err})
