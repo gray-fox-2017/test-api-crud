@@ -10,6 +10,7 @@ module.exports = {
       res.status(200)
       res.send(transactions)
     })
+    .populate('booklist')
   },
   create: function(req, res) {
     var transaction = new Transaction(req.body);
