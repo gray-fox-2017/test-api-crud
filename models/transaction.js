@@ -1,7 +1,6 @@
 var mongoose = require('mongoose');
-var Schema = mongoose.Schema;
 
-var transactionSchema = mongoose.Schema({
+var transactionSchema = new mongoose.Schema({
   memberid: String,
   days: String,
   date: { type: Date, default: Date.now },
