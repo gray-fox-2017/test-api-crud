@@ -22,7 +22,7 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    Transaction.update({ _id: req.id }, {
+    Transaction.updateOne({ _id: req.params.id }, {
       $set: req.body
     }, function(err, result) {
       if (err) {
