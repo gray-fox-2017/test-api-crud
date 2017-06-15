@@ -22,7 +22,7 @@ module.exports = {
     });
   },
   update: function(req, res) {
-    Book.update({ _id: req.id }, {
+    Book.update({ _id: req.params.id }, {
       $set: req.body
     }, function(err, result) {
       if (err) {
