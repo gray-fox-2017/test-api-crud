@@ -51,7 +51,7 @@ module.exports = {
 
   },
   delete: function(req, res) {
-    Book.remove({ _id: req.id }, function (err, result) {
+    Book.findByIdAndRemove({ _id: req.params.id }, function (err, result) {
       if (err) {
         res.status(500)
         res.send({err: err})
