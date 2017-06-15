@@ -5,7 +5,7 @@ var transactionSchema = new mongoose.Schema({
   days: String,
   date: { type: Date, default: Date.now },
   price: Number,
-  booklist: [{ type: Schema.Types.ObjectId, ref: 'Book' }]
+  booklist: [{ type: mongoose.Schema.ObjectId, ref: 'Book' }]
 });
 
 var Transaction = mongoose.model('Transaction', transactionSchema);

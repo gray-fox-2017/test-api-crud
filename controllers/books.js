@@ -1,3 +1,5 @@
+var Book = require('../models/book')
+
 module.exports = {
   all: function(req, res) {
     Book.find(function (err, books) {
@@ -27,9 +29,10 @@ module.exports = {
       if (err) {
         res.status(500)
         res.send({err: err})
+      } else {
+        res.status(200)
+        res.send(result)
       }
-      res.status(200)
-      res.send(result)
     });
   },
   delete: function(req, res) {
@@ -37,9 +40,10 @@ module.exports = {
       if (err) {
         res.status(500)
         res.send({err: err})
+      } else {
+        res.status(200)
+        res.send(result)
       }
-      res.status(200)
-      res.send(result)
     });
   }
 }
