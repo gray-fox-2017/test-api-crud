@@ -12,7 +12,10 @@ module.exports = {
     })
   },
   create: function(req, res) {
-    var book = new Book(req.body);
+    var book = new Book(req.rawBody);
+    console.log('ini dari fungsi create, buat meneliti book!!');
+    console.log(book);
+    console.log(req.body);
     book.save(function (err, result) {
       if (err) {
         res.status(500)
