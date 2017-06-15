@@ -1,10 +1,9 @@
 const express = require('express');
+const bodyParser = require('body-parser')
 const app = express();
 // const router = express.Router;
-
-const bodyparser = require('body-parser')
-app.use(bodyparser.json())
-app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json()); // support json encoded bodies
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/api-crud-mongoose');
 
