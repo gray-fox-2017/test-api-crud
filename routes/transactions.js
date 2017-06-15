@@ -1,6 +1,6 @@
 const express = require('express');
-const router = express.Router
-var transactionsController = require('../controller/transactions');
+var router = express.Router();
+var transactionsController = require('../controllers/transactions');
 
 router.get('/', transactionsController.all)
 router.post('/', transactionsController.create)
