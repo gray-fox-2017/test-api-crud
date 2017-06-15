@@ -1,3 +1,5 @@
+const Transaction = require('../models/transaction')
+
 module.exports = {
   all: function(req, res) {
     Transaction.find(function (err, transactions) {
@@ -10,6 +12,7 @@ module.exports = {
     })
   },
   create: function(req, res) {
+    // req.body.booklist = JSON.parse(req.body.booklist)
     var transaction = new Transaction(req.body);
     transaction.save(function (err, result) {
       if (err) {
