@@ -11,15 +11,23 @@ module.exports = {
       res.send(transactions)
     })
   },
-  craete: function(req, res) {
-    var transaction = new Transaction(req.body);
+  create: function(req, res) {
+    console.log("-------------------------------------",req.body)
+    var transaction = new Transaction({
+      memberid: req.body.memberid,
+      days: req.body.days,
+      date: new Date(),
+      price: req.body.price,
+      booklist: req.body.booklist
+    })
     transaction.save(function (err, result) {
       if (err) {
         res.status(500)
-        res.send({err: err})
-      }
+        res.send(err)
+      } else {
       res.status(200)
       res.send(result)
+      }
     });
   },
   update: function(req, res) {
