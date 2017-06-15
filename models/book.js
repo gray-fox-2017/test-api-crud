@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var bookSchema = new Schema({
   isbn: String,
   title: String,
-  author: Number,
+  author: String,
   category: String,
   stock: Number
 });

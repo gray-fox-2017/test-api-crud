@@ -23,7 +23,7 @@ module.exports = {
   },
   update: function(req, res) {
     Transaction.update({ _id: req.params.id }, {
-      $set: req.body.booklist
+      $set: req.body
     }, function(err, result) {
       if (err) {
         res.status(500)

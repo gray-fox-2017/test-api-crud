@@ -5,8 +5,9 @@ const app = express()
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/api-crud-mongoose');
-app.set(bodyParser.json())
-app.set(bodyParser.urlencoded({extended:false}))
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended:false}))
 
 var books = require('./routes/books')
 var transactions = require('./routes/transactions')
