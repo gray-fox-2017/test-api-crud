@@ -1,15 +1,17 @@
+var Transaction = require('../models/transaction');
+
 module.exports = {
   all: function(req, res) {
-    Transaction.find(function (err, transactions) {
+    Transaction.find({}, function (err, transactions) {
       if (err) {
         res.status(500)
-        res.send({err: err})
+        res.send(err.message)
       }
       res.status(200)
       res.send(transactions)
     })
   },
-  craete: function(req, res) {
+  create: function(req, res) {
     var transaction = new Transaction(req.body);
     transaction.save(function (err, result) {
       if (err) {
