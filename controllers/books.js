@@ -1,12 +1,16 @@
+const Book = require('../models/book.js')
+
 module.exports = {
   all: function(req, res) {
-    Book.find(function (err, books) {
+    Book.find({},function (err, books) {
       if (err) {
         res.status(500)
         res.send({err: err})
       }
-      res.status(200)
-      res.send(books)
+      else{
+        res.status(200)
+        res.send(books)  
+      }
     })
   },
   create: function(req, res) {
