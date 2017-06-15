@@ -11,7 +11,7 @@ module.exports = {
   },
   create: function(req, res) {
     var book = new Book(req.body);
-    book.save(function (err, result) {
+    Book.save(function (err, result) {
       if (err) {
         res.status(500)
         res.send({err: err})
