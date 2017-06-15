@@ -2,7 +2,7 @@ const express = require('express');
 
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/api-crud-mongoose');
+mongoose.connect('mongodb://books:books@ds149491.mlab.com:49491/mongoosecrud');
 
 var books = require('./routes/books')
 var transactions = require('./routes/transactions')
