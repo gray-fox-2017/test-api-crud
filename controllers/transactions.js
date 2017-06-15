@@ -1,6 +1,8 @@
+var Transaction = require('../models/transaction')
+
 module.exports = {
   all: function(req, res) {
-    Transaction.find(function (err, transactions) {
+    Transaction.find({}, function (err, transactions) {
       if (err) {
         res.status(500)
         res.send({err: err})
