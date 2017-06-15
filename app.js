@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express()
+const bodyParser = require('body-parser')
 
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/api-crud-mongoose');
